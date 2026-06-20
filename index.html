@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehsan {Surname} — Finance PhD Candidate</title>
+<meta name="description" content="Ehsan {Surname}, PhD Candidate in Finance at the Stockholm School of Economics. Research on financial institutions, venture capital and private equity, and sustainable finance.">
+
+<!-- monogram favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EFEEEA'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%2315161A' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#EFEEEA;
+    --ink:#15161A;
+    --muted:#6E6E68;
+    --faint:#9A998F;
+    --line:#D5D4CD;
+    --hover:#20303A;
+    --maxw:920px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Mono",monospace;line-height:1.6;
+  }
+  ::selection{background:#15161A;color:#EFEEEA}
+  a{color:inherit}
+
+  /* ── sticky index bar ─────────────────────────── */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(239,238,234,.82);backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .inner{
+    max-width:var(--maxw);margin:0 auto;
+    padding:16px clamp(20px,5vw,48px);
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+  }
+  .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+  .topnav{display:flex;gap:22px;flex-wrap:wrap}
+  .topnav a{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;transition:color .25s ease;
+  }
+  .topnav a .idx{color:var(--faint);margin-right:6px}
+  .topnav a:hover,.topnav a.active{color:var(--ink)}
+  .topnav a:focus-visible{outline:2px solid var(--hover);outline-offset:4px}
+  @media(max-width:620px){.topnav{display:none}}
+
+  /* ── shared layout ────────────────────────────── */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+  section{
+    padding:clamp(48px,8vw,84px) 0;border-top:1px solid var(--line);
+  }
+  .grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(22px,4vw,52px)}
+  .grid h2{
+    font-family:"IBM Plex Mono",monospace;font-weight:400;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    padding-top:6px;
+  }
+  @media(max-width:640px){.grid{grid-template-columns:1fr;gap:14px}}
+
+  /* ── hero ─────────────────────────────────────── */
+  .hero{padding:clamp(70px,13vw,150px) 0 clamp(48px,9vw,90px)}
+  .hero .eyebrow{display:block;margin-bottom:26px}
+  h1{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(46px,9vw,104px);line-height:1.0;letter-spacing:-.015em;
+    margin-bottom:30px;
+  }
+  .lead{font-size:15px;line-height:1.75;max-width:50ch;color:var(--ink)}
+  .lead .dim{color:var(--muted)}
+  .hero-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:36px}
+  .hero-links a{
+    font-size:12px;letter-spacing:.06em;text-decoration:none;color:var(--ink);
+    border-bottom:1px solid var(--line);padding-bottom:3px;
+    transition:color .25s ease,border-color .25s ease;
+  }
+  .hero-links a:hover{color:var(--hover);border-color:var(--hover)}
+
+  /* ── papers ───────────────────────────────────── */
+  .jmp-tag{
+    display:inline-block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--paper);background:var(--ink);padding:4px 9px;margin-bottom:14px;
+  }
+  .paper{padding-bottom:34px;margin-bottom:34px;border-bottom:1px solid var(--line)}
+  .paper:last-child{padding-bottom:0;margin-bottom:0;border-bottom:none}
+  .paper h3{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(20px,2.7vw,27px);line-height:1.22;letter-spacing:-.005em;margin-bottom:10px;
+  }
+  .paper .meta{font-size:12.5px;color:var(--muted);letter-spacing:.015em;margin-bottom:12px}
+  .paper .meta .honor{color:var(--ink)}
+  .paper .coauthors{font-style:italic}
+
+  details{margin-top:6px}
+  details summary{
+    list-style:none;cursor:pointer;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);display:inline-flex;align-items:center;gap:8px;
+    transition:color .25s ease;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"+";font-size:13px;color:var(--faint)}
+  details[open] summary::before{content:"–"}
+  details summary:hover{color:var(--ink)}
+  details p{font-size:13.5px;line-height:1.8;max-width:64ch;color:var(--ink);margin:14px 0 0}
+
+  .links{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap}
+  .links a{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink);
+    border-bottom:1px solid var(--line);padding-bottom:2px;
+    transition:color .25s ease,border-color .25s ease;
+  }
+  .links a:hover{color:var(--hover);border-color:var(--hover)}
+
+  .subhead{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+    margin:40px 0 22px;
+  }
+  .subhead:first-child{margin-top:0}
+
+  /* ── prose / teaching / about ─────────────────── */
+  .prose p{font-size:14px;line-height:1.85;max-width:64ch;margin-bottom:16px}
+  .prose p:last-child{margin-bottom:0}
+  .course{margin-bottom:24px}
+  .course:last-child{margin-bottom:0}
+  .course .t{font-family:"Fraunces",serif;font-size:19px;margin-bottom:4px}
+  .course .d{font-size:12.5px;color:var(--muted)}
+
+  /* ── references ───────────────────────────────── */
+  .refs{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  @media(max-width:640px){.refs{grid-template-columns:1fr}}
+  .ref .n{font-family:"Fraunces",serif;font-size:18px;margin-bottom:3px}
+  .ref .r{font-size:12px;color:var(--muted);line-height:1.5}
+  .ref .r a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .ref .r a:hover{color:var(--hover);border-color:var(--hover)}
+
+  /* ── footer ───────────────────────────────────── */
+  footer{border-top:1px solid var(--line)}
+  footer .inner{
+    max-width:var(--maxw);margin:0 auto;padding:34px clamp(20px,5vw,48px);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ── motion ───────────────────────────────────── */
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ STICKY INDEX ══ -->
+<div class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">Ehsan {Surname}</a>
+    <nav class="topnav">
+      <a href="#research"><span class="idx">01</span>Research</a>
+      <a href="#teaching"><span class="idx">02</span>Teaching</a>
+      <a href="#about"><span class="idx">03</span>About</a>
+      <a href="#references"><span class="idx">04</span>References</a>
+      <a href="#contact"><span class="idx">05</span>Contact</a>
+    </nav>
+  </div>
+</div>
+
+<a id="top"></a>
+
+<!-- ══ HERO ══ -->
+<div class="wrap">
+  <header class="hero reveal">
+    <span class="eyebrow">Stockholm School of Economics · Swedish House of Finance</span>
+    <h1>Ehsan&nbsp;{Surname}</h1>
+    <p class="lead">PhD Candidate in Finance. I study how financial institutions allocate
+      capital and information <span class="dim">— across banking, the venture and
+      private-equity cycle, and the transition to sustainable finance.</span></p>
+    <div class="hero-links">
+      <a href="#research">Research</a>
+      <a href="{CV_LINK}">Curriculum Vitae (PDF)</a>
+      <a href="{SCHOLAR_LINK}">Google Scholar</a>
+      <a href="{SSRN_LINK}">SSRN</a>
+      <a href="mailto:{firstname.surname}@hhs.se">Email</a>
+    </div>
+  </header>
+</div>
+
+<!-- ══ RESEARCH ══ -->
+<section id="research">
+  <div class="wrap grid reveal">
+    <h2>Research</h2>
+    <div>
+
+      <p class="subhead">Job Market Paper</p>
+      <div class="paper">
+        <span class="jmp-tag">Job Market Paper</span>
+        <h3>Breaching the Chinese Wall</h3>
+        <p class="meta"><span class="honor">Brattle Group Award</span> · Western Finance Association 2026</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>{Paste your abstract here. Two to four sentences works best on a landing page —
+             the reader who wants more clicks through to the PDF.}</p>
+        </details>
+        <div class="links">
+          <a href="{PDF_LINK}">PDF</a>
+          <a href="{SSRN_LINK}">SSRN</a>
+          <a href="{SLIDES_LINK}">Slides</a>
+        </div>
+      </div>
+
+      <p class="subhead">Working Papers</p>
+      <div class="paper">
+        <h3>Why Venture Later?</h3>
+        <p class="meta"><span class="honor">Ola Bengtsson Best PhD Paper Award</span> · Presented at the AFA Annual Meeting</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>{Abstract goes here.}</p>
+        </details>
+        <div class="links">
+          <a href="{PDF_LINK}">PDF</a>
+          <a href="{SSRN_LINK}">SSRN</a>
+        </div>
+      </div>
+
+      <p class="subhead">Work in Progress</p>
+      <div class="paper">
+        <h3>Green Loans and Household Behavior</h3>
+        <p class="meta"><span class="coauthors">with Akbaripour, Bos &amp; Olafsson</span></p>
+        <details>
+          <summary>Summary</summary>
+          <p>{One or two sentences on the question and stage.}</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEACHING ══ -->
+<section id="teaching">
+  <div class="wrap grid reveal">
+    <h2>Teaching</h2>
+    <div class="prose">
+      <div class="course">
+        <div class="t">{Course Name}</div>
+        <div class="d">Stockholm School of Economics · {Term} {Year} · {Instructor / Teaching Assistant}</div>
+      </div>
+      <div class="course">
+        <div class="t">{Earlier Course}</div>
+        <div class="d">Stockholm School of Economics · {Term} {Year} · {Role}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="wrap grid reveal">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I am a PhD candidate in Finance at the Stockholm School of Economics and the
+         Swedish House of Finance. My research sits at the intersection of financial
+         institutions, the venture and private-equity cycle, and sustainable finance.</p>
+      <p>My work has been recognized with the Brattle Group Award and the Ola Bengtsson
+         Best PhD Paper Award, and presented at the WFA and AFA annual meetings.
+         {Add one or two sentences in your own voice — what you care about, what you are
+         on the market for.}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REFERENCES ══ -->
+<section id="references">
+  <div class="wrap grid reveal">
+    <h2>References</h2>
+    <div class="refs">
+      <div class="ref">
+        <div class="n">Per Strömberg</div>
+        <div class="r">PhD Supervisor · Stockholm School of Economics<br><a href="mailto:{email}">{email}</a></div>
+      </div>
+      <div class="ref">
+        <div class="n">Bo Becker</div>
+        <div class="r">Stockholm School of Economics<br><a href="mailto:{email}">{email}</a></div>
+      </div>
+      <div class="ref">
+        <div class="n">Ramin Baghai</div>
+        <div class="r">Stockholm School of Economics<br><a href="mailto:{email}">{email}</a></div>
+      </div>
+      <div class="ref">
+        <div class="n">Marieke Bos</div>
+        <div class="r">Swedish House of Finance<br><a href="mailto:{email}">{email}</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER / CONTACT ══ -->
+<footer id="contact">
+  <div class="inner">
+    <span>Ehsan {Surname} · {firstname.surname}@hhs.se</span>
+    <span>Stockholm · MMXXVI</span>
+  </div>
+</footer>
+
+<script>
+  // active-section highlighting + scroll reveal
+  const links = document.querySelectorAll('.topnav a');
+  const map = {};
+  links.forEach(a => { const id = a.getAttribute('href').slice(1); if(id) map[id] = a; });
+
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting && map[e.target.id]){
+        links.forEach(l => l.classList.remove('active'));
+        map[e.target.id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+  const revObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+</script>
+
+</body>
+</html>
