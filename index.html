@@ -146,6 +146,15 @@
   /* ── prose / about ────────────────────────────── */
   .prose p{font-size:14px;line-height:1.85;max-width:66ch;margin-bottom:16px}
   .prose p:last-child{margin-bottom:0}
+  .about-aside h2{padding-top:6px}
+  .headshot{
+    display:block;width:100%;max-width:150px;aspect-ratio:1/1;object-fit:cover;
+    margin-top:22px;border:1px solid var(--line);
+    filter:grayscale(100%) contrast(.96) brightness(1.02);
+    transition:filter .5s ease;
+  }
+  .headshot:hover{filter:grayscale(0%) contrast(1)}
+  @media(max-width:640px){.headshot{margin-top:18px}}
 
   /* ── references ───────────────────────────────── */
   .refs{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
@@ -356,7 +365,10 @@
 <!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="wrap grid reveal">
-    <h2>About</h2>
+    <div class="about-aside">
+      <h2>About</h2>
+      <img class="headshot" src="photo.jpg" alt="Ehsan Mahdikhani" loading="lazy">
+    </div>
     <div class="prose">
       <p>I am a Ph.D. candidate in the Finance Department at the Stockholm School of Economics
          and the Swedish House of Finance. My research explores empirical corporate finance,
