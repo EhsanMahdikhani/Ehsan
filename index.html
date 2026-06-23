@@ -101,6 +101,11 @@
   .paper .meta{font-size:12.5px;color:var(--muted);letter-spacing:.015em;margin-bottom:12px}
   .paper .meta .honor{color:var(--ink)}
   .paper .coauthors{font-style:italic}
+  .award{
+    font-size:12px;letter-spacing:.02em;color:var(--ink);margin-bottom:12px;
+    display:flex;align-items:baseline;gap:9px;
+  }
+  .award::before{content:"★";color:var(--hover);font-size:11px;line-height:1}
 
   details{margin-top:6px}
   details summary{
@@ -127,6 +132,16 @@
     margin:40px 0 22px;
   }
   .subhead:first-child{margin-top:0}
+
+  /* ── presentations ────────────────────────────── */
+  .talks{margin-top:-6px}
+  .talks .row{
+    display:flex;justify-content:space-between;gap:18px;align-items:baseline;
+    padding:11px 0;border-bottom:1px solid var(--line);
+  }
+  .talks .row:last-child{border-bottom:none}
+  .talks .v{font-size:13.5px;color:var(--ink);line-height:1.4}
+  .talks .yr{font-size:12px;color:var(--faint);letter-spacing:.05em;white-space:nowrap}
 
   /* ── prose / about ────────────────────────────── */
   .prose p{font-size:14px;line-height:1.85;max-width:66ch;margin-bottom:16px}
@@ -178,7 +193,7 @@
     <span class="eyebrow">Stockholm School of Economics · Swedish House of Finance</span>
     <h1>Ehsan&nbsp;Mahdikhani</h1>
     <p class="lead">Ph.D. Candidate in the Finance Department at the Stockholm School of
-      Economics and the Swedish House of Finance.
+      Economics and the Swedish House of Finance.</p>
     <div class="hero-links">
       <a href="#research">Research</a>
       <a href="cv.pdf">Curriculum Vitae (PDF)</a>
@@ -199,6 +214,7 @@
       <div class="paper">
         <span class="jmp-tag">Job Market Paper</span>
         <h3>Breaching the Chinese Wall: Cross-Market Information Flow Following Financial Institution Mergers</h3>
+        <p class="award">Brattle Group Award for Outstanding Research, WFA 2026</p>
         <details>
           <summary>Abstract</summary>
           <p>How does access to private loan information affect institutional investors' equity
@@ -229,6 +245,7 @@
       <p class="subhead">Working Papers</p>
       <div class="paper">
         <h3>Why Venture Later? Incentives, Learning, and Industry Allocation in VC Funds</h3>
+        <p class="award">Ola Bengtsson Award for Best PhD Paper</p>
         <details>
           <summary>Abstract</summary>
           <p>Venture funds enter new high-tech industries with delay. I develop and estimate a
@@ -321,6 +338,17 @@
         </details>
       </div>
 
+      <p class="subhead">Presentations</p>
+      <div class="talks">
+        <div class="row"><span class="v">Advanced Corporate Finance Workshop, NHH Bergen</span><span class="yr">2024</span></div>
+        <div class="row"><span class="v">Young Scholars Nordic Finance Workshop, Aarhus</span><span class="yr">2025</span></div>
+        <div class="row"><span class="v">Western Finance Association (WFA)</span><span class="yr">2026</span></div>
+        <div class="row"><span class="v">Northern Finance Association (NFA)</span><span class="yr">2026</span></div>
+        <div class="row"><span class="v">SFA</span><span class="yr">2026</span></div>
+        <div class="row"><span class="v">Dauphine PhD Workshop</span><span class="yr">2026</span></div>
+        <div class="row"><span class="v">American Finance Association (AFA)</span><span class="yr">2026</span></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -352,19 +380,19 @@
     <div class="refs">
       <div class="ref">
         <div class="n">Per Strömberg</div>
-        <div class="r">Ph.D. Supervisor · Stockholm School of Economics<br><a href="mailto:{Per.Stromberg@hhs.se}">{Per.Stromberg@hhs.se}</a></div>
+        <div class="r">Ph.D. Supervisor · Stockholm School of Economics<br><a href="mailto:Per.Stromberg@hhs.se">Per.Stromberg@hhs.se</a></div>
       </div>
       <div class="ref">
         <div class="n">Bo Becker</div>
-        <div class="r">Stockholm School of Economics<br><a href="mailto:{Bo.Becker@hhs.se}">{Bo.Becker@hhs.se}</a></div>
+        <div class="r">Stockholm School of Economics<br><a href="mailto:Bo.Becker@hhs.se">Bo.Becker@hhs.se</a></div>
       </div>
       <div class="ref">
         <div class="n">Ramin Baghai</div>
-        <div class="r">Stockholm School of Economics<br><a href="mailto:{Ramin.Baghai@hhs.se}">{Ramin.Baghai@hhs.se}</a></div>
+        <div class="r">Stockholm School of Economics<br><a href="mailto:Ramin.Baghai@hhs.se">Ramin.Baghai@hhs.se</a></div>
       </div>
       <div class="ref">
         <div class="n">Marieke Bos</div>
-        <div class="r">Swedish House of Finance<br><a href="mailto:{Marieke.Bos@hhs.se}">{Marieke.Bos@hhs.se}</a></div>
+        <div class="r">Swedish House of Finance<br><a href="mailto:Marieke.Bos@hhs.se">Marieke.Bos@hhs.se</a></div>
       </div>
     </div>
   </div>
