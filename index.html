@@ -11,7 +11,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -22,6 +22,7 @@
     --line:#D5D4CD;
     --hover:#20303A;
     --maxw:920px;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -73,11 +74,11 @@
   .hero{padding:clamp(70px,13vw,150px) 0 clamp(48px,9vw,90px)}
   .hero .eyebrow{display:block;margin-bottom:26px}
   h1{
-    font-family:"Fraunces",serif;font-weight:400;
+    font-family:"Fraunces",serif;font-weight:300;
     font-size:clamp(46px,9vw,104px);line-height:1.0;letter-spacing:-.015em;
     margin-bottom:30px;
   }
-  .lead{font-size:15px;line-height:1.75;max-width:52ch;color:var(--ink)}
+  .lead{font-family:var(--serif);font-weight:300;font-size:clamp(18px,2.2vw,21px);line-height:1.55;max-width:44ch;color:var(--ink)}
   .lead .dim{color:var(--muted)}
   .hero-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:36px}
   .hero-links a{
@@ -100,12 +101,11 @@
   }
   .paper .meta{font-size:12.5px;color:var(--muted);letter-spacing:.015em;margin-bottom:12px}
   .paper .meta .honor{color:var(--ink)}
-  .paper .coauthors{font-style:italic}
+  .paper .coauthors{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0}
   .award{
-    font-size:12px;letter-spacing:.02em;color:var(--ink);margin-bottom:12px;
-    display:flex;align-items:baseline;gap:9px;
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:15.5px;line-height:1.45;color:var(--ink);margin-bottom:12px;
   }
-  .award::before{content:"★";color:var(--hover);font-size:11px;line-height:1}
 
   details{margin-top:6px}
   details summary{
@@ -117,7 +117,7 @@
   details summary::before{content:"+";font-size:13px;color:var(--faint)}
   details[open] summary::before{content:"–"}
   details summary:hover{color:var(--ink)}
-  details p{font-size:13.5px;line-height:1.8;max-width:66ch;color:var(--ink);margin:14px 0 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  details p{font-family:var(--serif);font-size:16px;line-height:1.7;max-width:62ch;color:var(--ink);margin:16px 0 0;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
   .links{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap}
   .links a{
@@ -142,11 +142,11 @@
     padding:11px 0;border-bottom:1px solid var(--line);
   }
   .talks .row:last-child{border-bottom:none}
-  .talks .v{font-size:13.5px;color:var(--ink);line-height:1.4}
-  .talks .yr{font-size:12px;color:var(--faint);letter-spacing:.05em;white-space:nowrap}
+  .talks .v{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.4}
+  .talks .yr{font-size:12px;color:var(--faint);letter-spacing:.05em;white-space:nowrap;font-variant-numeric:tabular-nums lining-nums}
 
   /* ── prose / about ────────────────────────────── */
-  .prose p{font-size:14px;line-height:1.85;max-width:66ch;margin-bottom:16px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  .prose p{font-family:var(--serif);font-size:17px;line-height:1.7;max-width:62ch;margin-bottom:18px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
   .prose p:last-child{margin-bottom:0}
   .prose a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);
     transition:color .25s ease,border-color .25s ease}
@@ -156,9 +156,7 @@
     display:block;width:100%;max-width:150px;aspect-ratio:1/1;object-fit:cover;
     margin-top:22px;border:1px solid var(--line);
     filter:grayscale(100%) contrast(.96) brightness(1.02);
-    transition:filter .5s ease;
   }
-  .headshot:hover{filter:grayscale(0%) contrast(1)}
   @media(max-width:640px){.headshot{margin-top:18px}}
 
   /* ── references ───────────────────────────────── */
